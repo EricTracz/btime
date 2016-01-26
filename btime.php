@@ -11,12 +11,12 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: btime
 Domain Path: /language
-PeepSo is free software: you can redistribute it and/or modify
+Display Blog Time is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
 any later version.
 
-PeepSo is distributed in the hope that it will be useful,
+Display Blog Time is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY. See the
 GNU General Public License for more details.
  */
@@ -55,9 +55,13 @@ class et_btime_widget extends WP_Widget {
         $blogtime = current_time( 'mysql' );
         list( $today_year, $today_month, $today_day, $hour, $minute, $second ) = split( '([^0-9])', $blogtime );
 
-        echo 'Data: ' . $today_day . '-' . $today_month . '-' . $today_year;
+        $dateLg = __( 'Date: ', 'et_btime_widget_btime' );
+        $timeLg = __( 'Time: ', 'et_btime_widget_btime' );
+
+
+        echo $dateLg . $today_day . '-' . $today_month . '-' . $today_year;
         echo "<BR>";
-        echo 'Godzina: ' . $hour . ':' . $minute;
+        echo $timeLg . $hour . ':' . $minute;
 
 
 
