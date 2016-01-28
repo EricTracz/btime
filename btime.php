@@ -51,15 +51,18 @@ class et_btime_widget extends WP_Widget {
 // =============================================================
 // ======================== MAGIC ==============================
 // =============================================================
-        
 
-        $data = date_i18n( get_option( 'date_format' ), strtotime( '11/15-1976' ) );
-        echo $data;
+        $dateLg = __( 'Date: ', 'et_btime_widget_btime' );
+        $timeLg = __( 'Time: ', 'et_btime_widget_btime' );
+
+
+        $date = date_i18n( get_option( 'date_format' ), strtotime( '11/15-1976' ) );
+        echo $dateLg . $date;
 
         echo "<BR>";
 
         $time = current_time(get_option('time_format'));
-        echo $time;
+        echo $timeLg . $time;
 
 
         echo $args['after_widget'];
