@@ -2,9 +2,9 @@
 /*
 Plugin Name: Display Blog Time
 Plugin URI: http://www.erictra.cz
-Description: Widget displaying blog time
+Description: It's a widget which displays the current blog time. In the format and date set in your WordPress site's settings.
 Author: Arkadiusz 'Eric' Tracz
-Version: 0.8
+Version: 0.9 BETA
 Author URI: http://www.erictra.cz
 Created with the help of: http://www.wpbeginner.com/wp-tutorials/how-to-create-a-custom-wordpress-widget/
 License: GPLv2 or later
@@ -17,8 +17,8 @@ the Free Software Foundation, either version 2 of the License, or
 any later version.
 
 Display Blog Time is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY. See the
-GNU General Public License for more details.
+but WITHOUT ANY WARRANTY - seriously.
+See the GNU General Public License for more details.
  */
 
 // Creating the widget
@@ -30,7 +30,7 @@ class et_btime_widget extends WP_Widget {
             'et_btime_widget',
 
 // Widget name will appear in UI
-            __('Blog Time Widget', 'et_btime_widget_btime'),
+            __('Display Blog Time', 'et_btime_widget_btime'),
 
 // Widget description
             array( 'description' => __( 'The widget displays currently set blogtime.', 'et_btime_widget_btime' ), )
@@ -49,21 +49,19 @@ class et_btime_widget extends WP_Widget {
 
 // This is where you run the code and display the output
 // =============================================================
-// ======================== MAGIC ==============================
+// ================== MAGIC STARTS HERE ========================
 // =============================================================
 
-        $dateLg = __( 'Date: ', 'et_btime_widget_btime' );
-        $timeLg = __( 'Time: ', 'et_btime_widget_btime' );
-
-
+        // Language strings
+        $dateLg = __( 'Date:', 'et_btime_widget_btime' );
+        $timeLg = __( 'Time:', 'et_btime_widget_btime' );
+        // This is the actual magic
         $date = date_i18n( get_option( 'date_format' ), strtotime( '11/15-1976' ) );
-        echo $dateLg . $date;
-
-        echo "<BR>";
-
         $time = current_time(get_option('time_format'));
-        echo $timeLg . $time;
-
+        // This is where it displays the date
+        echo $dateLg . " " . $date;
+        echo "<BR>";
+        echo $timeLg . " " . $time;
 
         echo $args['after_widget'];
     }
@@ -74,7 +72,7 @@ class et_btime_widget extends WP_Widget {
             $title = $instance[ 'title' ];
         }
         else {
-            $title = __( 'New title', 'et_btime_widget_btime' );
+            $title = __( 'Current Blog Time', 'et_btime_widget_btime' );
         }
 // Widget admin form
         ?>
