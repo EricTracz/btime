@@ -2,7 +2,7 @@
 /*
 Plugin Name: Display Blog Time
 Plugin URI: http://www.erictra.cz
-Description: It's a widget which displays the current blog time. In the format and date set in your WordPress site's settings.
+Description: It's a widget which displays the current blog time and date. In the format set in your WordPress site's settings.
 Author: Arkadiusz 'Eric' Tracz
 Version: 0.9 BETA
 Author URI: http://www.erictra.cz

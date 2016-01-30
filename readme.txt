@@ -9,7 +9,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-It's a widget which displays the current blog time. In the format and date set in your WordPress site's settings.
+It's a widget which displays the current blog time and date. In the format set in your WordPress site's settings.
 
 == Installation ==
 
