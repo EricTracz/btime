@@ -62,9 +62,16 @@ class et_btime_widget extends WP_Widget {
         echo $dateLg . " " . $date;
         echo "<BR>";
         echo $timeLg . " " . $time;
+        
+
+        // ajax magic begins here:
+        // well not yet because kurwa mać.
+
+
 
         echo $args['after_widget'];
     }
+
 
 // Widget Backend
     public function form( $instance ) {
